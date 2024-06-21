@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="{{ url_for('analyze') }}" method="post">
+    <label for="ticker">Stock Ticker:</label>
+    <input type="text" id="ticker" name="ticker" required>
+
+    <label for="start_date">Start Date (YYYY-MM-DD):</label>
+    <input type="date" id="start_date" name="start_date" required>
+
+    <label for="analysis_type">Select Analysis Type:</label>
+    <select id="analysis_type" name="analysis_type">
+        <option value="1">Rolling Windows</option>
+        <option value="2">Bollinger Bands</option>
+        <option value="3">Fibonacci Levels</option>
+        <option value="4">Pivot Points</option>
+        <option value="5">Earnings Analysis</option>
+    </select>
+
+    <button type="submit">Analyze</button>
+</form>
+{% endblock %}

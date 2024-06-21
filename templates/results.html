@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Analysis Result</h2>
+
+{% if img %}
+  <div class="image-container">
+    <img src="data:image/png;base64,{{ img }}" alt="Analysis Graph">
+  </div>
+{% endif %}
+
+{% if analysis_result %}
+  <p>{{ analysis_result }}</p>
+{% endif %}
+
+<a href="{{ url_for('home') }}">Go Back</a>
+{% endblock %}
